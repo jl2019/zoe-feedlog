@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset>
+  <title>zoe-feedlog: Project Notes</title>
+  <style>
+
+    /* base styles */
+    body{ background: #222; color: #fff; padding: 0; margin: 0; overflow-x:hidden;}
+    body > * { margin: 0; }
+    *{ transition: all 126ms ease-in; }
+ 
+    /* page header area */
+    header{ background-color: #000; }
+    header u[data-project-name]:before{
+      color: #ff0;
+      text-shadow: 1pt 1pt 0 #000;
+      font-style: normal;
+      font-weight: bold;
+      content: attr(data-project-name);
+    }
+    /* the side menu / table of contents */
+    aside{ 
+      position: fixed;
+      top:0;
+      background: rgba(255,255,255,.3);
+      height: 0em;
+      width: 22%;
+      padding: 0 5.5%;
+      right: -30%;
+    }
+    aside:hover{ 
+      right: 0; 
+      height: 100%;
+      background-color:rgba(255,255,255,1);
+    }
+
+    /* ye ol' hamburgle! (heaven character) */
+    aside a.trigger:before{ content: '\2630'; color: #fff; }
+    aside a.trigger{
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 24pt;
+      color: #f00;
+    }
+    aside:hover a.trigger:before{ content: '\2637'; color: #000; }
+
+    /* the main content wrapper */
+    main{ padding: 1em; display: block; }
+
+    main > section{
+      padding: 1em;
+      background: #000;
+    }
+    main > section > a > h3{
+      margin: 0;
+      color: #cef;
+    }
+    main > section > a ~ *{ opacity: .2; }
+    main > section > a:target ~ *,
+    main > section:hover > a ~ *{
+      opacity: 1;
+    }
+    a[name]{ 
+      text-decoration: none
+    }
+
+    /* code formatting */ 
+    code{
+      background: #666;
+      margin: 2em 3em;
+      padding: 1em;
+      color: #eee;
+      text-shadow: 1pt 1pt 1pt rgba( 0, 0, 0,.6);
+    }
+    code > u{
+      font-style: normal !important; 
+    }
+    /* define different types of syntax highlighting */
+    code u[data-type=keyword]{ color: #0f0 }
+    code u[data-type=action] { color: #f9a }
+    code u[data-type=value]  { color: #0ff }
+
+    /* header styles */ 
+    h1{ color: #0ff; }
+    h2{ color: #0dd; }
+    h3{ color: #0aa; }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Project Notes for <u data-project-name="zoe-feedlog"></u></h1>
+  </header>
+
+  <aside>
+    <!-- build out a table of contents to the sections of the styleguide -->
+    <a class="trigger"></a>
+    <ul>
+      <li>
+        <a href="#">Project Notes</a>
+        <ul>
+          <li>
+            <a href="#styleguide">Style Guide</a>
+            <ul>
+              <li><a href="#styleguide-git">git</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <main>
+    <h2><a name="styleguide">Style Guide</a></h2>
+    <p>[establish guidelines for code style]</p>
+
+    <section data-date-added="2019-04-05T10:39:00+07:00" data-date-modified="2019-04-05T10:39:00+07:00">
+      <!-- date should conform to https://tools.ietf.org/html/rfc3339 -->
+      <a name="styleguide-git" href="#styleguide-git"><h3>git</h3></a>
+      <p>First, git commit subjects, should we create topic keywords.</p>
+      <p>Example commit message:</p>
+      <code><u data-type="keyword">config: </u><u data-type="action">set ruby version:</u><u data-type="value">2.6.2</u></code>
+      <ul>
+        <li>"config" declares which type of task this commit encapsulated. here we're updating project configurations in whichever files were commited"</li>
+        <li>"set ruby version" is a description of the action taken</li>
+        <li>"2.6.2" is the value for that config.</li>
+      </ul>
+      <p>This is the simplest use case, and open to further development</p>
+    </section>
+
+
+  </main>
+
+  <footer><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p><p>.</p>.</footer>
+</body></html>
