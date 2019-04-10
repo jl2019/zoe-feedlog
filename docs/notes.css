@@ -1,6 +1,6 @@
 /* styles for notes pages in zoe-feedlog/docs/ */
 /* base styles */
-body{ background: #222; color: #fff; padding: 0; margin: 0; overflow-x:hidden;}
+body{ background: #000; color: #fff; padding: 0; margin: 2em; overflow-x:hidden;}
 body > * { margin: 0; }
 *{ transition: all 126ms ease-in; }
 
@@ -21,7 +21,7 @@ aside{
   height: 0em;
   width: 22%;
   padding: 0 5.5%;
-  right: -30%;
+  right: -27%;
 }
 aside:hover{ 
   right: 0; 
