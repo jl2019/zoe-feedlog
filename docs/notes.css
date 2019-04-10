@@ -38,7 +38,7 @@ aside a.trigger{
   font-size: 24pt;
   color: #f00;
 }
-aside:hover a.trigger:before{ content: '\2637'; color: #000; }
+aside:hover a.trigger:before{ content: '\2630'; color: #000; }
 
 /* the main content wrapper */
 main{ padding: 1em; display: block; }
