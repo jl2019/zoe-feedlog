@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>zoe-feedlog: [notes subject] Notes</title>
+  <link href="notes.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>[notes subject] Notes for <u data-project-name="[project name]"></u></h1>
+    <p>[notes description]</p>
+  </header>
+
+  <aside>
+    <!-- build out a table of contents to the sections of the styleguide -->
+    <a class="trigger"></a>
+    <ul>
+      <li>
+        <a href="#">[notes subject]</a>
+        <ul>
+          <li>
+            <a href="#topic0">[topic0 name]</a>
+            <ul>
+              <li><a href="#topic0-subject0">[topic0 subject0 name]</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <main>
+    <h2><a name="topic0">[topic0 name]</a></h2>
+    <p>[topic0 description]</p>
+
+    <section data-date-added="2019-04-05T10:39:00+07:00" data-date-modified="2019-04-05T10:39:00+07:00">
+      <!-- date should conform to https://tools.ietf.org/html/rfc3339 -->
+      <a name="topic0-subject0" href="#topic0-subject0"><h3>[topic0 subject0 name]</h3></a>
+      <p>[content]</p>
+      <code><u data-type="keyword">[keyword]: </u><u data-type="action">[action]:</u><u data-type="value">[value]</u></code>
+      <ul>
+        <li>[list content]</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer></footer>
+</body></html>

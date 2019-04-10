@@ -1,0 +1,85 @@
+/* styles for notes pages in zoe-feedlog/docs/ */
+/* base styles */
+body{ background: #222; color: #fff; padding: 0; margin: 0; overflow-x:hidden;}
+body > * { margin: 0; }
+*{ transition: all 126ms ease-in; }
+
+/* page header area */
+header{ background-color: #000; }
+header u[data-project-name]:before{
+  color: #ff0;
+  text-shadow: 1pt 1pt 0 #000;
+  font-style: normal;
+  font-weight: bold;
+  content: attr(data-project-name);
+}
+/* the side menu / table of contents */
+aside{ 
+  position: fixed;
+  top:0;
+  background: rgba(255,255,255,.3);
+  height: 0em;
+  width: 22%;
+  padding: 0 5.5%;
+  right: -30%;
+}
+aside:hover{ 
+  right: 0; 
+  height: 100%;
+  background-color:rgba(255,255,255,1);
+}
+
+/* ye ol' hamburgle! (heaven character) */
+aside a.trigger:before{ content: '\2630'; color: #fff; }
+aside a.trigger{
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24pt;
+  color: #f00;
+}
+aside:hover a.trigger:before{ content: '\2637'; color: #000; }
+
+/* the main content wrapper */
+main{ padding: 1em; display: block; }
+
+main > section{
+  padding: 1em;
+  background: #000;
+}
+main > section > a > h3{
+  margin: 0;
+  color: #cef;
+}
+main > section > a ~ *{ opacity: .2; }
+main > section > a:target ~ *,
+main > section:hover > a ~ *{
+  opacity: 1;
+}
+a[name]:target{
+  outline: 1px solid red;
+}
+a[name]{
+  text-decoration: none;
+}
+
+/* code formatting */ 
+code{
+  background: #666;
+  margin: 2em 3em;
+  padding: 1em;
+  color: #eee;
+  text-shadow: 1pt 1pt 1pt rgba( 0, 0, 0,.6);
+}
+code > u{
+  font-style: normal !important; 
+}
+/* define different types of syntax highlighting */
+code u[data-type=keyword]{ color: #0f0 }
+code u[data-type=action] { color: #f9a }
+code u[data-type=value]  { color: #0ff }
+
+/* header styles */ 
+h1{ color: #0ff; }
+h2{ color: #0dd; }
+h3{ color: #0aa; }
