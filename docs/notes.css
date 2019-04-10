@@ -48,8 +48,9 @@ main > section{
   background: #000;
 }
 main > section > a > h3{
+  color: #aaa;
   margin: 0;
-  color: #cef;
+  display: inline-block;
 }
 main > section > a ~ *{ opacity: .2; }
 main > section > a:target ~ *,
@@ -57,7 +58,11 @@ main > section:hover > a ~ *{
   opacity: 1;
 }
 a[name]:target{
-  outline: 1px solid red;
+  outline: none;
+  border-bottom: 3pt solid #f0f;
+}
+a[name]:target > h3{
+  color: #fff;
 }
 a[name]{
   text-decoration: none;
