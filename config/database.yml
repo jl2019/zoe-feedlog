@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: zoe-feedlog_production
-  username: zoe-feedlog
-  password: <%= ENV['ZOE-FEEDLOG_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # username: zoe-feedlog
+  # password: <%= ENV['ZOE-FEEDLOG_DATABASE_PASSWORD'] %>
