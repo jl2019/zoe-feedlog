@@ -52,10 +52,10 @@ main > section > a > h3{
   margin: 0;
   display: inline-block;
 }
-main > section > a ~ *{ opacity: .2; }
-main > section > a:target ~ *,
-main > section:hover > a ~ *{
-  opacity: 1;
+
+main > section > a + p ~ * { display: none; }
+main > section > a:target + p ~ *{
+  display: block;
 }
 a[name]:target{
   outline: none;
