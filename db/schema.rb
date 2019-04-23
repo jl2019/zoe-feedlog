@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_013356) do
+ActiveRecord::Schema.define(version: 2019_04_23_065822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,29 @@ ActiveRecord::Schema.define(version: 2019_04_23_013356) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "feedings", force: :cascade do |t|
+    t.bigint "pet_id"
+    t.bigint "food_id"
+    t.integer "quantity"
+    t.string "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_feedings_on_food_id"
+    t.index ["pet_id"], name: "index_feedings_on_pet_id"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -31,4 +54,6 @@ ActiveRecord::Schema.define(version: 2019_04_23_013356) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "feedings", "foods"
+  add_foreign_key "feedings", "pets"
 end
