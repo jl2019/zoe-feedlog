@@ -1,2 +1,8 @@
-<h1>Dashboard#dashboard</h1>
-<p>Find me in app/views/dashboard/dashboard.html.erb</p>
+<pre>
+<%= render 'users/user' %>.
+<% @pets.each do |pet| %>
+  <%= render partial: 'pets/pet', locals: { pet: pet } %>
+<% end %>
+else add pet
+</pre>
+
