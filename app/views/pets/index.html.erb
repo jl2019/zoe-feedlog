@@ -1,0 +1,9 @@
+does this user have pets?
+then loop through them
+(they can then sort them? so we store their prefered sort sequence?))
+render the individual pet partial
+<% @pets.each do |pet| %>
+<div style="border:1px solid red;">
+  <%= pet.name  %>
+</div>
+<% end %>
