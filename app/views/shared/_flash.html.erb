@@ -1,38 +1,47 @@
   <aside class="flash <%= flash.keys.first.to_s %>">
     <style>
+    /* base flash message */
     aside.flash .alert{
+      /* box */
+      border-bottom: 1pt solid #fff;
+      box-shadow: 0 -5pt 15pt rgba(0,0,0,1);
       background-color: #fff;
+      padding: .25em 0 0;
+
+      /* typography */
       color: #666;
       line-height: 3em;
-      text-align: center;
+      text-align: left;
+      text-indent: 5em;
+      font-family: monospace;
 
+      /* layout */
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      padding: .5em 0;
-      display: inline-block;
-      box-shadow: 0 3pt 3pt rgba(0,0,0,.3);
+      margin-top: -5em;
     }
+    /* different colors for flash types {info, alert} */
     aside.flash .alert-info{
       color: green;
+      background-color: #fafffa;
     }
     aside.flash .alert-alert{
       color: red;
+      background-color: #fffafa;
     }
     /* add animations */
     aside.flash .alert{
-      animation: announce 5s;
+      animation: announce 4s;
       animation-fill-mode: forwards;
-      animation-timing-function: steps(300,end);
+      animation-timing-function: steps(20,end);
     }
     @keyframes announce{
-        0%{margin-top: -5em; opacity:   0%}
-        4%{margin-top:  0em}
-       50%{margin-top:  0em; opacity: 100%}
-       64%{                  opacity:  10%}
-       94%{margin-top:  0em}
-      100%{margin-top: -5em; opacity:   0%}
+        0%{margin-top: -2em}
+        9%{margin-top:  0em}
+       91%{margin-top:  0em}
+      100%{margin-top: -5em}
     }
     </style>
     <% flash.each do |key, value| %>
