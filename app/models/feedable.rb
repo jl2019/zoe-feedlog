@@ -1,4 +1,4 @@
-class Feeding < ApplicationRecord
+class Feedable < ApplicationRecord
   belongs_to :pet
   belongs_to :user
 end

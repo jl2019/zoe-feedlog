@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_084750) do
+ActiveRecord::Schema.define(version: 2019_05_13_132254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feedables", force: :cascade do |t|
+    t.bigint "pet_id"
+    t.bigint "user_id"
+    t.index ["pet_id"], name: "index_feedables_on_pet_id"
+    t.index ["user_id"], name: "index_feedables_on_user_id"
+  end
 
   create_table "feedings", force: :cascade do |t|
     t.bigint "pet_id"
@@ -45,6 +52,8 @@ ActiveRecord::Schema.define(version: 2019_05_05_084750) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "feedables", "pets"
+  add_foreign_key "feedables", "users"
   add_foreign_key "feedings", "foods"
   add_foreign_key "feedings", "pets"
 end
