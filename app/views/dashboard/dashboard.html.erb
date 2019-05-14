@@ -1,8 +1,8 @@
 <pre>
-<%= render 'users/user' %>.
-<% @pets.each do |pet| %>
-  <%= render partial: 'pets/pet', locals: { pet: pet } %>
+<%= render 'users/user' %>
+<% @user.pets.each do |pet| %>
+<%= render partial: 'pets/pet', locals: { pet: pet } %>
 <% end %>
-else add pet
+<%= render partial: 'pets/add' %>
 </pre>
 
