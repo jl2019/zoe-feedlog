@@ -1,3 +1,4 @@
-Pet photo
-<%= image_tag(pet[:photo]) %>
-<a href="#">edit pet</a>
+-- _pet --
+<%= image_tag(pet[:photo]) if pet[:photo] %>
+<%= link_to "edit", pet_path(pet.id), action: 'edit' %>
+-- end _pet --
