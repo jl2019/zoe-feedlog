@@ -4,4 +4,6 @@ class Pet < ApplicationRecord
   has_many :edible
   has_many :users, through: :feedable
   has_many :foods, through: :edibles
+
+  validates :name, presence: true
 end
