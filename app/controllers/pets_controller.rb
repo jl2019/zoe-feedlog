@@ -11,13 +11,27 @@ class PetsController < ApplicationController
 
   # POST /pets/
   def create
-    Pet.create!(pet_params)
+    puts "~~~~ pet_params ~~~~"
+    puts pet_params
+    puts "~~~~ creating #{pet_params[:name]} ~~~~"
+    current_pet = Pet.create!({
+      :name => pet_params[:name]
+    })
+    puts "~~~~ created #{current_pet[:name]}[id=#{current_pet[:id]}] ~~~~"
+    # we should join this pet to this user
+    join = Feedable.create({
+      :pet_id  => current_pet[:id],
+      :user_id => pet_params[:user_id]
+    })
+    join.save()
+    flash[:info] = "Created #{current_pet[:name]}!"
+    redirect_back(fallback_location: dashboard_path)
   end
 
 
   private
   def pet_params
     # this looks like nesting isn't correct TODO
-    params.permit(:pet, :id, :name, :animal, :dob)
+    params.permit(:pet, :id, :name, :animal, :dob, :user_id)
   end
 end
