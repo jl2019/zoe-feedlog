@@ -28,6 +28,18 @@ class PetsController < ApplicationController
     redirect_back(fallback_location: dashboard_path)
   end
 
+  # DELETE /pets/:id
+  def destroy
+    pet = Pet.find_by_id pet_params[:id]
+    ActiveRecord::Base.transaction do
+      # get our linked pets
+      links = Feedable.where("pet_id=#{pet.id}")
+      links.each { |join| join.destroy }
+      pet.destroy
+    end
+    flash[:info] = "Deleted #{pet.name}"
+    redirect_back(fallback_location: dashboard_path)
+  end
 
   private
   def pet_params
