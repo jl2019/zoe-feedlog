@@ -1,3 +1,12 @@
--- _add --
-Add a pet
--- end _add --
+<div id="pet_add">
+<h3>Add a pet</h3>
+<%# add a new pet %>
+<%= form_tag("/pets", method: "post") do %>
+<%# required: name %>
+<%= text_field_tag(:name, nil, placeholder: "name") %>
+<%# optional: type of animal %>
+<%# date of birth / birthday %>
+<%= hidden_field_tag(:user_id, user[:id]) %>
+<%= submit_tag('add +') %>
+<% end %>
+</div>
